@@ -19,6 +19,6 @@ document.getElementById("goButton").addEventListener("click", function () {
     if (redirectionURLs[selectedStation]) {
         window.location.href = redirectionURLs[selectedStation];
     } else {
-        alert("Please select both a mechanic and a station before clicking Go.");
+        alert("Wybierz prawidlowe opcje.");
     }
 });
