@@ -2,11 +2,8 @@ document.getElementById("goButton").addEventListener("click", function () {
     var selectedMechanic = document.getElementById("mechanicDropdown").value;
     var selectedStation = document.getElementById("stationDropdown").value;
 
-    // Konwersja nazwiska mechanika na wielkie litery i zamiana spacji na podkreślenia
-    selectedMechanic = selectedMechanic.toUpperCase().replace(/ /g, "_");
-    
-    // Konwersja nazwy stacji na wielkie litery i zamiana spacji na podkreślenia
-    selectedStation = selectedStation.toUpperCase().replace(/ /g, "_");
+    selectedMechanic = selectedMechanic.toUpperCase().replace(" ", "_");
+    selectedStation = selectedStation.toUpperCase().replace(" ", "_");
 
     var baseRedirectURL = "https://web.miniextensions.com/c8PrY0xXNNhsDJQQeLCl?prefill_Mechanic=" + selectedMechanic;
 
@@ -20,4 +17,8 @@ document.getElementById("goButton").addEventListener("click", function () {
     };
 
     if (redirectionURLs[selectedStation]) {
-        window.location.href = redirectionURLs[selectedStation
+        window.location.href = redirectionURLs[selectedStation];
+    } else {
+        alert("Wybierz prawidlowe opcje.");
+    }
+});
